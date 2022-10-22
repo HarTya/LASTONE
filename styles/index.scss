@@ -97,32 +97,36 @@ body {
                 font-size: 30px;
             }
         }
-        #platform {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            &:not(:last-child) {
-                margin-bottom: 50px;
+        a {
+            color: currentColor;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
             }
-            > span {
-                margin-right: 15px;
-                *::selection {
-                    background-color: transparent;
-                }
-            }
-            > div {
-                line-height: 1.1;
-                text-align: left;
-                span {
-                    font-size: 25px;
-                }
-                p {
-                    font-size: 12px;
-                    letter-spacing: 1px;
-                    opacity: 0.9;
-                    font-family: InterSemiBold, sans-serif;
-                    &::selection {
+            > #platform {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                > span {
+                    margin: 15px;
+                    *::selection {
                         background-color: transparent;
+                    }
+                }
+                > div {
+                    line-height: 1.1;
+                    text-align: left;
+                    span {
+                        font-size: 25px;
+                    }
+                    p {
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        opacity: 0.9;
+                        font-family: InterSemiBold, sans-serif;
+                        &::selection {
+                            background-color: transparent;
+                        }
                     }
                 }
             }
