@@ -32,6 +32,7 @@ body {
         width: 100%;
         max-width: 1200px;
         margin: 50px auto;
+        padding: 0 30px;
         text-align: center;
         animation: Show 1s linear forwards;
         @keyframes Show {
@@ -43,8 +44,24 @@ body {
             }
         }        
         h1 {
+            position: relative;
             font-size: 60px;
             font-family: InterExtraBold, sans-serif;
+            animation: ShowText 1.25s linear forwards;
+            @keyframes ShowText {
+                0%, 50% {
+                    top: -50px;
+                }
+                75% {
+                    top: 5px;
+                }
+                85% {
+                    top: -5px;
+                }
+                100% {
+                    top: 0;
+                }
+            }  
         }
         h2 {
             font-size: 30px;
@@ -58,10 +75,15 @@ body {
                 background-color: transparent;
             }
         }
+        #content {
+            width: 530px;
+            margin: 0 auto;
+        }
         #card {
+            cursor: pointer;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center; 
             span {
                 display: block;
                 width: 50px;
@@ -69,7 +91,6 @@ body {
                 margin-right: 15px;
             }
             padding: 10px 15px;
-            width: 530px;
             margin: 50px auto;
             border-radius: 15px;
             p {
@@ -78,10 +99,16 @@ body {
         }
         #platform {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
+            &:not(:last-child) {
+                margin-bottom: 50px;
+            }
             > span {
                 margin-right: 15px;
+                *::selection {
+                    background-color: transparent;
+                }
             }
             > div {
                 line-height: 1.1;
@@ -90,7 +117,8 @@ body {
                     font-size: 25px;
                 }
                 p {
-                    font-size: 14px;
+                    font-size: 12px;
+                    letter-spacing: 1px;
                     opacity: 0.9;
                     font-family: InterSemiBold, sans-serif;
                     &::selection {
