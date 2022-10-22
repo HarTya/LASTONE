@@ -26,8 +26,21 @@
 }
 
 body {
+    &::-webkit-scrollbar {
+        display: none;
+    }
     margin: 0;
     font-family: InterBold, sans-serif;
+    #bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: url(../public/images/bg.png) center no-repeat;
+        background-size: cover;
+        pointer-events: none;
+    }
     main {
         width: 100%;
         max-width: 1200px;
@@ -42,94 +55,144 @@ body {
             100% {
                 opacity: 1;
             }
-        }        
-        h1 {
-            position: relative;
-            font-size: 60px;
-            font-family: InterExtraBold, sans-serif;
-            animation: ShowText 1.25s linear forwards;
-            @keyframes ShowText {
-                0%, 50% {
-                    top: -50px;
-                }
-                75% {
-                    top: 5px;
-                }
-                85% {
-                    top: -5px;
-                }
-                100% {
-                    top: 0;
-                }
-            }  
-        }
-        h2 {
-            font-size: 30px;
-        }
-        h3 {
-            font-size: 20px;
-            opacity: 0.9;
-            margin-top: 10px;
-            font-family: InterSemiBold, sans-serif;
-            &::selection {
-                background-color: transparent;
-            }
         }
         #content {
-            width: 530px;
+            position: relative;
+            z-index: 1;
+            width: 550px;
             margin: 0 auto;
-        }
-        #card {
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center; 
-            span {
-                display: block;
-                width: 50px;
-                height: 50px;
-                margin-right: 15px;
+            h1 {
+                position: relative;
+                font-size: 64px;
+                font-family: InterExtraBold, sans-serif;
+                animation: ShowText 1s linear forwards;
+                @keyframes ShowText {
+                    0%, 50% {
+                        top: -50px;
+                    }
+                    75% {
+                        top: 5px;
+                    }
+                    90% {
+                        top: -5px;
+                    }
+                    100% {
+                        top: 0;
+                    }
+                }  
             }
-            padding: 10px 15px;
-            margin: 50px auto;
-            border-radius: 15px;
-            p {
+            h2 {
                 font-size: 30px;
+                font-family: InterSemiBold, sans-serif;
+                span {
+                    font-family: InterExtraBold, sans-serif;
+                }
             }
-        }
-        a {
-            color: currentColor;
-            text-decoration: none;
-            &:hover {
-                text-decoration: underline;
+            h3 {
+                cursor: default;
+                font-size: 20px;
+                opacity: 0.9;
+                margin-top: 10px;
+                font-family: InterSemiBold, sans-serif;
+                &::selection {
+                    background-color: transparent;
+                }
             }
-            > #platform {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                > span {
-                    margin: 15px;
+            a {
+                color: currentColor;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+                #card {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     *::selection {
                         background-color: transparent;
                     }
-                }
-                > div {
-                    line-height: 1.1;
-                    text-align: left;
+                    &:hover {
+                        span {
+                            border-radius: 5px;
+                            svg {
+                                opacity: 1;
+                            }
+                        }
+                    } 
                     span {
-                        font-size: 25px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50px;
+                        height: 50px;
+                        margin-right: 15px;
+                        transition: border-radius 0.2s ease-in-out;
+                        border-radius: 0px;
+                        svg {
+                            transition: opacity 0.2s ease-in-out;
+                            opacity: 0;
+                        }
                     }
+                    padding: 10px 15px;
+                    margin: 50px auto 25px auto;
+                    border-radius: 15px;
                     p {
-                        font-size: 12px;
-                        letter-spacing: 1px;
-                        opacity: 0.9;
-                        font-family: InterSemiBold, sans-serif;
-                        &::selection {
-                            background-color: transparent;
+                        font-size: 30px;
+                    }
+                }
+                #platform {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    *::selection {
+                        background-color: transparent;
+                    }
+                    > span {
+                        margin: 15px 15px 15px 0;
+                    }
+                    > div {
+                        line-height: 1.1;
+                        text-align: left;
+                        span {
+                            font-size: 25px;
+                        }
+                        p {
+                            font-size: 12px;
+                            letter-spacing: 1px;
+                            opacity: 0.9;
+                            font-family: InterSemiBold, sans-serif;
                         }
                     }
                 }
             }
+            section {
+                margin-top: 25px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                h2 {
+                    font-size: 35px;
+                    margin: 10px 10px 15px 5px;
+                    font-family: InterExtraBold, sans-serif;
+                }
+                p {
+                    font-size: 19px;
+                    margin: 10px;
+                    opacity: 0.9;
+                    font-family: InterSemiBold, sans-serif;
+                }
+            }
         }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #content {
+        width: 100%!important;
+    }
+    #platform {
+        justify-content: center!important;
     }
 }

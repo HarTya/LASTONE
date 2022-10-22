@@ -5,9 +5,12 @@ import '../styles/index.scss';
 
 function MyApp({ Component, pageProps }): ReactElement<AppProps> {
     return (
-        <main>
-            <Component {...pageProps} variables={variables} />
-        </main>
+        <>
+            <div id='bg'></div>
+            <main>
+                <Component {...pageProps} variables={variables} />
+            </main>
+        </>
     )
 }
 

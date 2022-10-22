@@ -1,4 +1,28 @@
 function Index({ variables }) {
+
+    const tracks = [
+        '*', 
+        'TEASER', 
+        'BESTIE', 
+        'TATU', 
+        'ГЕРОЙ (skit)', 
+        'CCTV',
+        'UGU',
+        'SHEIKH',
+        'Дор Блю',
+        'GUF DISS',
+        'B',
+        'Вернуть Прошлое (Skit)',
+        'BALANCE',
+        'Ночь, Такси, Заметки',
+        'я понял (skit)',
+        'Eeee',
+        'KATRINA',
+        'LOCATION',
+        '10 секунд тишины перед последним треком (skit)',
+        'Вставал Падал'
+    ];
+
     return (
         <>
             <style global jsx>{`
@@ -9,11 +33,15 @@ function Index({ variables }) {
             `}</style>
             <div id='content'>
                 <h1>MORGENSHTERN</h1>
-                <h2>НОВЫЙ АЛЬБОМ - LAST ONE</h2>
+                <h2>ПОСЛЕДНИЙ АЛЬБОМ - <span>LAST ONE</span></h2>
                 <h3>СЛУШАТЬ НА ВСЕХ ПЛОЩАДКАХ!</h3>
                 <a href='https://www.youtube.com/c/mmdcrew' target='_blank'>
                     <div id='card' style={{ background: variables.secondaryColor, color: variables.mainColor }}>
-                        <span style={{ background: variables.mainColor }}></span>
+                        <span style={{ background: variables.mainColor }}>
+                            <svg width='40' height='40' fill={variables.secondaryColor} viewBox='0 0 24 24'>
+                                <path d='m16.315 13.316-7.635 4.43c-.648.376-1.48-.079-1.48-.836V8.05c0-.757.83-1.213 1.48-.836l7.635 4.43a.963.963 0 0 1 0 1.672Z'></path>
+                            </svg>
+                        </span>
                         <p>MORGENSHTERN - LAST ONE</p>
                     </div>
                 </a>
@@ -25,7 +53,7 @@ function Index({ variables }) {
                             </svg>
                         </span>
                         <div>
-                            <span>Новый Альбом на Spotify</span>
+                            <span>Альбом на Spotify</span>
                             <p>MORGENSHTERN - LastOne</p>
                         </div>
                     </div>
@@ -38,7 +66,7 @@ function Index({ variables }) {
                             </svg>
                         </span>
                         <div>
-                            <span>Новый Альбом на YouTube Music</span>
+                            <span>Альбом на YouTube Music</span>
                             <p>MORGENSHTERN - LastOne</p>
                         </div>
                     </div>
@@ -52,11 +80,17 @@ function Index({ variables }) {
                             </svg>
                         </span>
                         <div>
-                            <span>Новый Альбом на Apple Music</span>
+                            <span>Альбом на Apple Music</span>
                             <p>MORGENSHTERN - LastOne</p>
                         </div>
                     </div>
                 </a>
+                <section>
+                    <h2>Треки:</h2>
+                    {tracks.map((track, i) => 
+                        <p key={i}>{i + 1}. {track}</p>
+                    )}
+                </section>
             </div>
         </>
     )
