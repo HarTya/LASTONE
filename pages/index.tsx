@@ -35,7 +35,7 @@ function Index({ variables }) {
                 <h1>MORGENSHTERN</h1>
                 <h2>ПОСЛЕДНИЙ АЛЬБОМ - <span>LAST ONE</span></h2>
                 <h3>СЛУШАТЬ НА ВСЕХ ПЛОЩАДКАХ!</h3>
-                <a href='https://www.youtube.com/c/mmdcrew' target='_blank'>
+                <a href='https://www.youtube.com/c/mmdcrew/videos' target='_blank'>
                     <div id='card' style={{ background: variables.secondaryColor, color: variables.mainColor }}>
                         <span style={{ background: variables.mainColor }}>
                             <svg width='40' height='40' fill={variables.secondaryColor} viewBox='0 0 24 24'>
